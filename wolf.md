@@ -1110,6 +1110,8 @@ Conclusion
 
 According to conservation of priming sites and taxonomic resolution, primer pair No. 1 and No. 2 are similar and the best. We will order these two primer pairs and try them out!
 
-**Forward\_No1** AAACTGGGATTAGATACC Amplicon size:107.70 bp (82-119)
-**Forward\_No2** AACTGGGATTAGATACCC Amplicon size:106.70 bp (81-118)
+**Forward\_No1** AAACTGGGATTAGATACC *Amplicon size*:107.70 bp (82-119)
+
+**Forward\_No2** AACTGGGATTAGATACCC *Amplicon size*:106.70 bp (81-118)
+
 **Reverse** TAGAACAGGCTCCTCTAG
