@@ -1,0 +1,27 @@
+#
+# ecoPrimer version 0.4
+# Rank level optimisation : species
+# max error count by oligonucleotide : 3
+#
+# Restricted to taxon:
+#     7742 : Vertebrata (no rank)
+#
+# strict primer quorum  : 0.70
+# example quorum        : 0.90
+# counterexample quorum : 0.10
+#
+# database : mito.vert
+# Database is constituted of  3717 examples        corresponding to  3646 species
+#                        and     0 counterexamples corresponding to     0 species
+#
+# amplifiat length between [50,120] bp
+# DB sequences are considered as circular
+# Pairs having specificity less than 0.60 will be ignored
+#
+     0	AAACTGGGATTAGATACC	TAGAACAGGCTCCTCTAG	48.5	14.9	52.3	23.1	7	9	GG	3675	0	0.989	3605	0	0.989	2653	0.736	82	119	107.70		
+     1	AACTGGGATTAGATACCC	TAGAACAGGCTCCTCTAG	50.5	22.7	52.3	23.1	8	9	GG	3675	0	0.989	3605	0	0.989	2653	0.736	81	118	106.70		
+     2	CAAACTGGGATTAGATAC	TAGAACAGGCTCCTCTAG	47.5	26.4	52.3	23.1	7	9	GG	3672	0	0.988	3602	0	0.988	2650	0.736	83	119	108.70		
+     3	ATTAGATACCCCACTATG	TAGAACAGGCTCCTCTAG	47.6	10.9	52.3	23.1	7	9	GG	3669	0	0.987	3599	0	0.987	2643	0.734	74	111	99.70		
+     4	GATTAGATACCCCACTAT	TAGAACAGGCTCCTCTAG	47.2	10.3	52.3	23.1	7	9	GG	3668	0	0.987	3598	0	0.987	2642	0.734	62	112	100.69		
+     5	ACTGGGATTAGATACCCC	TAGAACAGGCTCCTCTAG	52.6	22.1	52.3	23.1	9	9	GG	3634	0	0.978	3567	0	0.978	2615	0.733	85	117	105.76		
+     6	GGGATTAGATACCCCACT	TAGAACAGGCTCCTCTAG	52.6	21.3	52.3	23.1	9	9	GG	3633	0	0.977	3566	0	0.978	2610	0.732	82	114	102.75		
