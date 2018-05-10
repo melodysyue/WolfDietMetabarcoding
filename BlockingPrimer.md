@@ -71,7 +71,9 @@ Wolf blocking primer design
 ### Result
 
 **5' segment:** AGA TAC CCC ACT ATG CTT AGC CCT AAA CAT AGA TAA TTT TAC AAC (Size:45bp, GC: 36%, Tm: 65 degC)
+
 **linker:** 5 deoxyinosines IIIII (AAAAT)
+
 **3' segment:** AAT TCG CCA GAG G (Size:13bp, GC:54%)
 
 References
