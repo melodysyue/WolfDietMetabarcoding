@@ -1,10 +1,11 @@
 ## Design DNA Metabarcode to Analyze Wolf Diet
 
 ##### Learning goals
-* set up computer environment with bash
-* install OBITools, ecoPCR and ecoPrimers with bash  
-* install ROBITools and related packages in R
+* Set up computer environment with bash
+* Install OBITools, ecoPCR and ecoPrimers with bash  
+* Install ROBITools and related packages in R
 * Download complete mitochondrial genomes from NCBI ftp files
-* streamline the computation process
+* Streamline the computation process
 * DNA metabarcode design strategy  
-* DNA metabarcode selection criteria
+* DNA metabarcode selection criteria  
+* Blocking primer design
