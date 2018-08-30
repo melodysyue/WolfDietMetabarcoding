@@ -25,7 +25,7 @@ Forward overhang: 5'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGAACTGGGATTAGATACCC 3'
 Reverse overhang: 5'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGTAGAACAGGCTCCTCTAG 3'
 
 Amplicon Size: 
-The target (including universal 12S primers): ~144 bp; 
+The target (including universal 12S primers): ~144 bp;  
 PCR1 product (adding ~67 bp illumina adapters at both ends): ~211 bp;
 
 Recommended considerations for primer design/ordering:  
