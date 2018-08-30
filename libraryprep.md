@@ -1,0 +1,218 @@
+Amplicon Sequencing Library Preparation
+================
+Yue Shi, PhD candidate, University of Washington,
+08/23/2018
+
+-   [First-round PCR (Amplicon PCR)](#first-round-pcr-amplicon-pcr)
+    -   [Amplicon primers with adapters](#amplicon-primers-with-adapters)
+    -   [PCR recipe (total volume: 20ul)](#pcr-recipe-total-volume-20ul)
+    -   [Cycling conditions](#cycling-conditions)
+    -   [Suggestions](#suggestions)
+-   [PCR Clean-Up 1](#pcr-clean-up-1)
+    -   [Homemade beads recipe (Rohland & Reich 2012)](#homemade-beads-recipe-rohland-reich-2012)
+    -   [Cleaning Protocol](#cleaning-protocol)
+-   [Amplicon PCR product quantification and normalization](#amplicon-pcr-product-quantification-and-normalization)
+    -   [Qubit tips](#qubit-tips)
+-   [Index PCR](#index-pcr)
+    -   [Dual Indexing Principle](#dual-indexing-principle)
+    -   [PCR recipe (total volume: 20ul)](#pcr-recipe-total-volume-20ul-1)
+    -   [Cycling conditions](#cycling-conditions-1)
+-   [PCR Clean-Up 2](#pcr-clean-up-2)
+-   [Library Validation](#library-validation)
+-   [Library quantification, normalization and pooling](#library-quantification-normalization-and-pooling)
+-   [Library Denaturing and MiSeq Sample Loading](#library-denaturing-and-miseq-sample-loading)
+    -   [Denature DNA](#denature-dna)
+    -   [Dilute the denatured DNA](#dilute-the-denatured-dna)
+    -   [Denature and Dilution of PhiX control](#denature-and-dilution-of-phix-control)
+    -   [Combine Amplicon Library and PhiX control](#combine-amplicon-library-and-phix-control)
+
+First-round PCR (Amplicon PCR)
+------------------------------
+
+This step uses PCR to amplify template out of a DNA sample using region of inerest specific primers with overhang adapters attached.
+
+### Amplicon primers with adapters
+
+Illumina adapter overhang nucleotide sequences are added to the gene-specific sequences. The full length primer sequences are:
+
+Forward overhang: 5'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG-\[locus-specific sequence\]
+Reverse overhang: 5'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG-\[locus-speciifc sequence\]
+
+Or in this case:
+
+Forward overhang: 5'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGAACTGGGATTAGATACCC 3'
+Reverse overhang: 5'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGTAGAACAGGCTCCTCTAG 3'
+
+Amplicon Size: The target (including universal 12S primers): ~144 bp; PCR1 product (adding ~67 bp illumina adapters at both ends): ~211 bp;
+
+Recommended considerations for primer design/ordering:
+\* Pair-end reads should have at least ~50 bp of overlapping sequence in the middle. For example, if running 2*X*250 bp paired-end reads, the insert size should be of 450 bp or smaller so that the bases sequenced at the end of each read overlap.
+\* The locus-specific portion of primer (excluding overhang sequence) must have a melting temperature (Tm) of 60-65 degC. For the Tm calculation only, the gene-specific portion must be used in calculation. For hairpin and dimer calculation, the fully assembled primer sequence (including the overhang) should be used. However, most universal primers have very low Tm.
+\* Use standard desalting purification when ordering oligo primer sets.
+
+### PCR recipe (total volume: 20ul)
+
+-   Nuclease-free water: 7.2ul;
+-   Q5 Master Mix (2X): 10 ul for final concentration of 1X;
+-   Forward Primer (10uM): 0.4 ul for final concentration of 0.2uM;
+-   Reverse Primer (10uM)L 0.4 ul for final concentration of 0.2uM.
+-   DNA : 2ul of DNA extract. Note: 1-10ng of template DNA is good, 2ng is suggested. No need to normalize DNA concentration at this point, but Qubit the samples to get a general idea about the variation of the sample quality.
+
+### Cycling conditions
+
+The idea is to gain enough material with as low a cycle number as possible to avoid PCR biases and amplification errors. Ta: annealing conditions should be similar to those used for the primers without adapters.20-25 cycles are suggested. The following cycling condition is based on the NEBNext Q5 recommendatons;
+
+1.  Initial Denaturation: 98 degC for 30s;
+2.  25 cycles:
+    Denaturation: 98 degC for 10s;
+    Annealing: 56 degC for 30s;
+3.  Final extension: 72 degC for 2 min;
+4.  Hold: 4 degC;
+
+### Suggestions
+
+Partial sequences of Illumina adapters from both primers are the same, which means they might anneal and elongate at room temperature, resulting in large amounts of primer dimers. Keep reagents and PCR mixture on ice block when loading samples. Start PCR amplification within 5 min;
+
+PCR Clean-Up 1
+--------------
+
+Bead-cleaning uses paramagnetic carboxyl-coated beads in a PEG/NaCl buffer, known as Solid Phase Reversible Immobilization (SPRI) technology. THe binding capacity of the beads is high, it is possible to bind at least 7 ug of dsDNA/ssDNA to 1 ul bead reagent. The beads permit dual size selection. The commercially available kits are expensive. Thus, we use a homemade mix by combining Carboxyl-modified Sera-Mag Magnetic Speed-beads (Fisher Scientific, cat. \#65152105050250) in a PEG/NaCl buffer. 1.8X beads solution binds DNA fragmetns 100 bp and larger.
+
+### Homemade beads recipe (Rohland & Reich 2012)
+
+What you need include: \* PEG-8000
+\* 5M NaCl
+\* 1M Tris-HCl
+\* 0.5M EDTA \* Tween-20 \* Sera-Mag beads \* TE buffer (for 100ml of TE buffer, add 1ml of 1M Tris-HCl and 0.2ml of 0.5M EDTA and fill up with water)
+
+Recipe:
+1. Add 9g PEG-8000 to a 50ml tube, and add:
+10ml 5M NaCl
+500ul 1M Tris-HCl
+100ul 0.5M EDTA
+2. Fill to 49ml with water and shake until all PEG is dissolved;
+3. Add 27.5ul Tween-20 and mix;
+4. Shake Sera-Mag beads to resuspend completely and transfer 1ml bead suspension to a a microcentrifudge tube. Pellet beads on a magnetic stand and discard supernatant. Wash twice with 1ml TE buffer each time and then resuspend in 1ml TE buffer;
+5. Add beads to the PEG mixture and mix;
+6. Store at 4 degC in the dark;
+
+### Cleaning Protocol
+
+1.  Bring the beads to room temperature (~ 30 min);
+2.  Centrifuge the Amplicon PCR plate to collect condensation and carefully remove the seal;
+3.  Vortex the beads for 30 s to make sure that the beads are evenly dispersed. Calculate how much beads per sample and how many samples to process;
+4.  Add 36ul (1.8X) beads to each well of the Amplicon PCR plate. Gently pipette entire volume up and down 10 times. The color of the mixure sould appear homogenous after mixing. Change tips between columns.
+5.  Incubate at room temperature without shaking for 5 min;
+6.  Place the plate on a magnetic stand for 2 min or until the supernatant has cleared.
+7.  With the Amplicon PCR plate on the magnetic stand, use a mutlichannel pipette to remove and discard 31ul supernatant. Take care not to disturb the beads. Change tips between columns. Leave 5 ul of supernatant behind, otherwise beads are drawn out with the supernatant.
+8.  With the plate on the magnetic stand, wash the beads with 200 ul freshly prepared 80% ethanol to each sample well;(note: the original AMPure protocol recommeneded use of a 79% ethanol wash solution. This needed to be freshly made, as over time it becomes more dilute since it absorbs atmospheric water and ethanol avaporates. Dilute ethanol will wash away DNA. This can be avoided by using an 80% ethanol solution.)
+9.  Do the cleaning dance: turning the tube 180 degC and allow the beads to recollect on the other side of wall. Repeat 6 times;
+10. Incubate the plate on the magnetic stand for 30 s;
+11. Carefully remove and discard the supernatant. Apirate slowly to prevent the beads from sliding down the sides of the wells and into pipette tips. The beads are not drawn out easily when in alcohol, so it is not necessary to leave any supernatant behind.
+12. Perform a second ethanol wash;
+13. Use a P20 multichannel pipette with fine tips to remove excess ethanol; If necessary, you can spin down the plate and remove the excess ethanol with P10 pipette.
+14. With the plate still on the magnetic stand, allow the beads to air-dry for 5 min; Do not dry longer than 5 min, the beads get too dry and yield decreases.
+15. Remove the Amplicon PCR plate from the magnetic stand. Using a multichannel pipette, add 12.5ul water to each well. Gently pipette mix up and down 10 times to make sure that beads are fully resuspended; (note: the liquid level will be high enough to contact the magnetic beads at a 40 ul elution volume. Using less than 40 ul will require mixing to ensure the liquid comes into contact with the beads, and may not be sufficient to elute the entire PCR product)
+16. Incubate at room temperature for 2 min;
+17. Place the plate on the magnetic stand for 2 min or until the supernatant has claered;
+18. Use a multichannel pipette, carefully transfer 10 ul of supernatant from the Amplicon PCR plate to a new PCR 96-well PCR plate. Change tips between samples to avoid cross-contamination;
+
+Amplicon PCR product quantification and normalization
+-----------------------------------------------------
+
+The point of this step is to make sure you have the same amount of DNA going into the second round of PCR or Index PCR. To do this, use Qubit and follow the Qubit protocol. Once the DNA concentration has been determined for each sample, calcualte the required volume of water to add to each well of a new plate and normalize DNA concentration to 0.5ng/ul (TBD).
+
+### Qubit tips
+
+-   Incubate the assay tubes after mixing for 2 min before reading;
+-   Calibrate with new standards (Standard 1 and Standard 2) every time you use Qubit;
+-   Wipe the tube with kimwipe before insert the tube into the chamber;
+-   Do not leave the assay tubes in Qubit for longer than it takes to read;
+-   The calibration is complete after Standard \#2 is read. The new standards graph with data points for standards connected by a line appears on the screen. Standard 1 is at 0 ng/ml, Standard 2 is at 500 ng/ml;
+-   Check Standards Screen displays the raw fluorescence values for standards.The reading of your sample should fall somewhere between that of the two standards;
+-   After calibration, you can read the samples;
+-   Check the dilution factor by clicking "Calculate Stock Conc";
+-   Avoid bubbles in samples. Centrifuge briefly will often help dissipate bubbles;
+-   Put your samples into a box while waiting for reading;
+
+Index PCR
+---------
+
+This step attaches dual indices and Illumina sequencing adapters using the Nextera XT Index Kit. PCR2 product (adding ~69 bp index primers at both ends): ~280 bp.
+
+### Dual Indexing Principle
+
+The dual indexing strategy uses two 8 base indices,Index 1 (i7) adjacent to the P7 sequence, and Index 2 (i5) adjacent to the P5 sequence. Dual indexing is enabled by adding a unique combination of Index 1 (i7) and index 2(i5) to each sample. N or S refers to Nextera XT sample preparation. So N50X and S50X are interchangable.
+
+Arrange Index 1 and 2 primers in a way:
++ Arrange Index 2 primer (S5XX) tubes vertically, aligned with rows A through H;
++ Arrange Index 1 primer (N7XX) tubes horizontally, aligned with columns1 through 12;
+
+Note: if you only process a few dozens of samples, pick index priemrs carefully to make sure that each base position of the index sequence has a signal in both color channels (G/T or A/C) for the index read.
+
+### PCR recipe (total volume: 20ul)
+
+-   Nuclease-free water: 4ul;
+-   Index 1 (10uM): 2ul for final concentration of 1uM; (also try 0.25uM)
+-   Index 2 (10uM): 2ul for final concentration of 1uM;
+-   Q5 Master Mix (2X): 10 ul for final concentration of 1X;
+-   PCR1 product: 2ul
+
+### Cycling conditions
+
+1.  Initial Denaturation: 98 degC for 30s;
+2.  8 cycles:
+    Denaturation: 98 degC for 10s;
+    Annealing/Extension: 65 degC for 75s;
+3.  Final Extension: 65 degC for 5 min;
+4.  Hold: 4 degC;
+
+PCR Clean-Up 2
+--------------
+
+This step uses beads to clean up the final library before pooling and can be performed the same way as PCR Clean-up 1. except for the elution step: use 22.5ul water to elute and transfer 20ul final product instead.
+
+Library Validation
+------------------
+
+Run on a gel to check for the fragment size, and then use fragment analyzer to further validate. After two rounds of PCRs, the fragment size should be around 280 bp.
+
+Library quantification, normalization and pooling
+-------------------------------------------------
+
+For most Illlumina sequencing platforms, 2-4 nM for each library is the preferred starting concentration for the denaturating and dilution guidelines. For the most even representation of samples and most reliable cluster density, make sure that all pipetted volumes are at least 2 ul. For the most accurate results, an intermediate dilution of 20 nM is necessary to achieve at least a 2 µl pipet volume.
+
+1.  Transfer 5ul of each Index PCR product from your plate into a single microcentrifuge tube. Vortex well to mix;
+2.  Determine the concentration of DNA pool using the Qubit;
+3.  Ajust the DNA concentration to 4nM with RSB (resuspension buffer). You will need the fragment size information for this;
+
+Library Denaturing and MiSeq Sample Loading
+-------------------------------------------
+
+In preparation for cluster generation and sequencing, pooled libraries are denatured with NaOH, diluted with hybridization buffer (HT1), and then heat denatured before MiSeq sequencing. Illumina recommends using MiSeq v3 reagent kits for improved run metrics.
+
+### Denature DNA
+
+1.  Combine 5ul of 4nM pooled library and 5ul freshly diluted 0.2 N NaOH. Vortex briefly to mix and then centrifuge. Now the denatured library is at 2 nM.
+2.  Incubate for 5 min at room temperature to denature the DNA into single strands;
+3.  Make 20pM denatured library from 2 nM denatured library. Add 990ul pre-chilled HT1 to 10ul denatured library.
+4.  Place the denatured DNA on ice until you are ready to proceed to final dilution;
+
+### Dilute the denatured DNA
+
+1.  It is suggested to start your first run using a 4pM loading concentration. You can dilute the denatured library by MIXING 120ul of 20pM denatured library with 480ul pre-chilled HT1 to reach a totle volume of 600 ul;
+2.  Invert several times to mix and then centriduge the DNA solution;
+3.  Place the denatured and diluted DNA on ice;
+
+### Denature and Dilution of PhiX control
+
+PhiX Control v3 is a reliable, adapter-ligated library used as a control for Illumina sequencing runs. The library is derived from the small, well-characterized PhiX genome. The PhiX library provides a quality control for cluster generation, sequencing and alignment. Denature and dilute the 10 nM PhiX library to the same loading concentration as the amplicon library, such as 4 pM. Or you can use samples with different targets to increase the diversity and complexity of the total library;
+
+### Combine Amplicon Library and PhiX control
+
+1.  Illumina recommends that the final library mixture must contain at least 5% PhiX or other different libraries;
+2.  Set the combined sample library and PhiX control aside on ice;
+3.  Using a heat block, incubate the combined library and PhiX control tube at 96 degC for 2 min; Please perform the heat denaturation step immediately before loading to the MiSeq to ensure efficient template loading on the MiSeq flow cell.
+4.  After the incubation, invert the tube 1-2 times to mix and immediatley place in the ice-water bath;
+5.  Keep the tube in the ice-water bath for 5 min;
+6.  Load the samples to the MiSeq sequencer;
