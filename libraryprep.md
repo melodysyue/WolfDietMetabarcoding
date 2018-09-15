@@ -166,7 +166,7 @@ Note: if you only process a few dozens of samples, pick index priemrs carefully 
 PCR Clean-Up 2
 --------------
 
-This step uses beads to clean up the final library before pooling and can be performed the same way as PCR Clean-up 1. except for the elution step: use 25ul water to elute and transfer 20ul final product instead.
+This step uses beads to clean up the final library before pooling and can be performed the same way as PCR Clean-up 1.
 
 Library Validation
 ------------------
