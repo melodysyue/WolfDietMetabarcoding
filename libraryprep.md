@@ -7,7 +7,6 @@ Yue Shi, PhD candidate, University of Washington,
     -   [Amplicon primers with adapters](#amplicon-primers-with-adapters)
     -   [PCR recipe (total volume: 20ul)](#pcr-recipe-total-volume-20ul)
     -   [Cycling conditions](#cycling-conditions)
-    -   [Suggestions](#suggestions)
 -   [PCR Clean-Up 1](#pcr-clean-up-1)
     -   [Homemade beads recipe (Rohland & Reich 2012)](#homemade-beads-recipe-rohland-reich-2012)
     -   [Cleaning Protocol](#cleaning-protocol)
@@ -43,7 +42,8 @@ Or in this case:
 Forward overhang: 5'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGAACTGGGATTAGATACCC 3'
 Reverse overhang: 5'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGTAGAACAGGCTCCTCTAG 3'
 
-Amplicon Size: The target (including universal 12S primers): ~144 bp; PCR1 product (adding ~67 bp illumina adapters at both ends): ~211 bp;
+Amplicon Size: The target (including universal 12S primers): ~144 bp;
+PCR1 product (adding ~67 bp illumina adapters at both ends): ~211 bp;
 
 Recommended considerations for primer design/ordering:
 \* Pair-end reads should have at least ~50 bp of overlapping sequence in the middle. For example, if running 2*X*250 bp paired-end reads, the insert size should be of 450 bp or smaller so that the bases sequenced at the end of each read overlap.
@@ -56,7 +56,7 @@ Recommended considerations for primer design/ordering:
 -   Q5 Master Mix (2X): 10 ul for final concentration of 1X;
 -   Forward Primer (10uM): 0.4 ul for final concentration of 0.2uM;
 -   Reverse Primer (10uM)L 0.4 ul for final concentration of 0.2uM.
--   DNA : 2ul of DNA extract. Note: 1-10ng of template DNA is good, 2ng is suggested. No need to normalize DNA concentration at this point, but Qubit the samples to get a general idea about the variation of the sample quality.
+-   DNA : 2ul of DNA extract. Note: no need to Qubit fecal DNA extract.
 
 ### Cycling conditions
 
@@ -65,13 +65,9 @@ The idea is to gain enough material with as low a cycle number as possible to av
 1.  Initial Denaturation: 98 degC for 30s;
 2.  25 cycles:
     Denaturation: 98 degC for 10s;
-    Annealing: 56 degC for 30s;
+    Annealing: 54 degC for 30s;
 3.  Final extension: 72 degC for 2 min;
 4.  Hold: 4 degC;
-
-### Suggestions
-
-Partial sequences of Illumina adapters from both primers are the same, which means they might anneal and elongate at room temperature, resulting in large amounts of primer dimers. Keep reagents and PCR mixture on ice block when loading samples. Start PCR amplification within 5 min;
 
 PCR Clean-Up 1
 --------------
@@ -104,23 +100,23 @@ Recipe:
 4.  Add 36ul (1.8X) beads to each well of the Amplicon PCR plate. Gently pipette entire volume up and down 10 times. The color of the mixure sould appear homogenous after mixing. Change tips between columns.
 5.  Incubate at room temperature without shaking for 5 min;
 6.  Place the plate on a magnetic stand for 2 min or until the supernatant has cleared.
-7.  With the Amplicon PCR plate on the magnetic stand, use a mutlichannel pipette to remove and discard 31ul supernatant. Take care not to disturb the beads. Change tips between columns. Leave 5 ul of supernatant behind, otherwise beads are drawn out with the supernatant.
-8.  With the plate on the magnetic stand, wash the beads with 200 ul freshly prepared 80% ethanol to each sample well;(note: the original AMPure protocol recommeneded use of a 79% ethanol wash solution. This needed to be freshly made, as over time it becomes more dilute since it absorbs atmospheric water and ethanol avaporates. Dilute ethanol will wash away DNA. This can be avoided by using an 80% ethanol solution.)
+7.  With the Amplicon PCR plate on the magnetic stand, use a mutlichannel pipette to remove and discard 51ul supernatant. Take care not to disturb the beads. Change tips between columns. Leave 5 ul of supernatant behind, otherwise beads are drawn out with the supernatant.
+8.  With the plate on the magnetic stand, wash the beads with 200 ul freshly prepared 80% ethanol to each sample well;(note: the original AMPure protocol recommeneded use of a 70% ethanol wash solution. This needed to be freshly made, as over time it becomes more dilute since it absorbs atmospheric water and ethanol avaporates. Dilute ethanol will wash away DNA. This can be avoided by using an 80% ethanol solution.)
 9.  Do the cleaning dance: turning the tube 180 degC and allow the beads to recollect on the other side of wall. Repeat 6 times;
 10. Incubate the plate on the magnetic stand for 30 s;
 11. Carefully remove and discard the supernatant. Apirate slowly to prevent the beads from sliding down the sides of the wells and into pipette tips. The beads are not drawn out easily when in alcohol, so it is not necessary to leave any supernatant behind.
 12. Perform a second ethanol wash;
-13. Use a P20 multichannel pipette with fine tips to remove excess ethanol; If necessary, you can spin down the plate and remove the excess ethanol with P10 pipette.
+13. Use a P20/P10 multichannel pipette with fine tips to remove excess ethanol;
 14. With the plate still on the magnetic stand, allow the beads to air-dry for 5 min; Do not dry longer than 5 min, the beads get too dry and yield decreases.
-15. Remove the Amplicon PCR plate from the magnetic stand. Using a multichannel pipette, add 12.5ul water to each well. Gently pipette mix up and down 10 times to make sure that beads are fully resuspended; (note: the liquid level will be high enough to contact the magnetic beads at a 40 ul elution volume. Using less than 40 ul will require mixing to ensure the liquid comes into contact with the beads, and may not be sufficient to elute the entire PCR product)
+15. Remove the Amplicon PCR plate from the magnetic stand. Using a multichannel pipette, add 25ul water to each well. Gently pipette mix up and down 10 times to make sure that beads are fully resuspended;
 16. Incubate at room temperature for 2 min;
 17. Place the plate on the magnetic stand for 2 min or until the supernatant has claered;
-18. Use a multichannel pipette, carefully transfer 10 ul of supernatant from the Amplicon PCR plate to a new PCR 96-well PCR plate. Change tips between samples to avoid cross-contamination;
+18. Use a multichannel pipette, carefully transfer 20 ul of supernatant from the Amplicon PCR plate to a new PCR 96-well PCR plate. Change tips between samples to avoid cross-contamination;
 
 Amplicon PCR product quantification and normalization
 -----------------------------------------------------
 
-The point of this step is to make sure you have the same amount of DNA going into the second round of PCR or Index PCR. To do this, use Qubit and follow the Qubit protocol. Once the DNA concentration has been determined for each sample, calcualte the required volume of water to add to each well of a new plate and normalize DNA concentration to 0.5ng/ul (TBD).
+The point of this step is to make sure you have the same amount of DNA going into the second round of PCR or Index PCR. To do this, use Qubit and follow the Qubit protocol. Once the DNA concentration has been determined for each sample, calcualte the required volume of water to add to each well of a new plate and normalize DNA concentration to 10 ng/ul.
 
 ### Qubit tips
 
@@ -152,16 +148,16 @@ Note: if you only process a few dozens of samples, pick index priemrs carefully 
 
 ### PCR recipe (total volume: 20ul)
 
--   Nuclease-free water: 4ul;
--   Index 1 (10uM): 2ul for final concentration of 1uM; (also try 0.25uM)
--   Index 2 (10uM): 2ul for final concentration of 1uM;
+-   Nuclease-free water: 6.4ul;
+-   Index 1 (10uM): 0.8ul for final concentration of 0.4uM;
+-   Index 2 (10uM): 0.8ul for final concentration of 0.4uM;
 -   Q5 Master Mix (2X): 10 ul for final concentration of 1X;
 -   PCR1 product: 2ul
 
 ### Cycling conditions
 
 1.  Initial Denaturation: 98 degC for 30s;
-2.  8 cycles:
+2.  5 cycles:
     Denaturation: 98 degC for 10s;
     Annealing/Extension: 65 degC for 75s;
 3.  Final Extension: 65 degC for 5 min;
@@ -170,7 +166,7 @@ Note: if you only process a few dozens of samples, pick index priemrs carefully 
 PCR Clean-Up 2
 --------------
 
-This step uses beads to clean up the final library before pooling and can be performed the same way as PCR Clean-up 1. except for the elution step: use 22.5ul water to elute and transfer 20ul final product instead.
+This step uses beads to clean up the final library before pooling and can be performed the same way as PCR Clean-up 1. except for the elution step: use 25ul water to elute and transfer 20ul final product instead.
 
 Library Validation
 ------------------
