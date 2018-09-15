@@ -63,7 +63,7 @@ Recommended considerations for primer design/ordering:
 The idea is to gain enough material with as low a cycle number as possible to avoid PCR biases and amplification errors. Ta: annealing conditions should be similar to those used for the primers without adapters.20-25 cycles are suggested. The following cycling condition is based on the NEBNext Q5 recommendatons;
 
 1.  Initial Denaturation: 98 degC for 30s;
-2.  25 cycles:
+2.  30 cycles:
     Denaturation: 98 degC for 10s;
     Annealing: 54 degC for 30s;
 3.  Final extension: 72 degC for 2 min;
